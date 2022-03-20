@@ -5,3 +5,7 @@ Research on NP problem, and algorithms implementation
 ## Complexity
 The problem is NP-complete.
 It can be reduced to hamiltonian cycle.
+## Applications
+**Bottleneck traveling salesman problem** has a lot of applications, motivated by some concrete problemns, like school bus route.
+A classic application is in logistics, for example for deliveries.
+It's also used in biology(genome sequencing for example).
