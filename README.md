@@ -20,7 +20,7 @@ Generating all possible routes and take the cheapest using brute-force search.
 This solution's running time is O(n!), where <strong>n</strong> represents the number of cities.
 This solution becomes unfeasible for even 20 cities.
 If a computing a path takes 10^-9 seconds, for 25 cities the running time exceeds the age of universe.
-<strong>Held-Karp</strong> algorithm reduce the time complexity to O(n*n*2^n) by using dynamic programming.
+<strong>Held-Karp</strong> algorithm reduce the time complexity to O(n<sup>2</sup>2<sup>n</sup>)) by using dynamic programming.
 ## Applications
 **Travelling salesman problem** has a lot of applications, motivated by some concrete problems, like school bus route.<br/> 
 A classic application is in logistics(deliveries, post office etc..).<br/> 
