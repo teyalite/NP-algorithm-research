@@ -13,8 +13,8 @@ The problem is NP-hard.
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Tsp_opt.png/186px-Tsp_opt.png" alt="drawing" width="200"/><br/>
 ## Algorithms
 There are two main category of algorithms to solve the problem.<br/>
-> **Exact algorithms** these algorithms find the optimal solution but require more time if the problem is more complex.
-> **Heuristic algorithms**(Aka approximation) these algorithms find a solution fast butt they don't guarantee optimality.
+**Exact algorithms** these algorithms find the optimal solution but require more time if the problem is more complex.<br/>
+**Heuristic algorithms**(Aka approximation) these algorithms find a solution fast butt they don't guarantee optimality.<br/>
 ## Applications
 **Travelling salesman problem** has a lot of applications, motivated by some concrete problems, like school bus route.<br/> 
 A classic application is in logistics(deliveries, post office etc..).<br/> 
