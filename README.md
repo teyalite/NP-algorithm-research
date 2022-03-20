@@ -7,5 +7,5 @@ The problem is NP-complete.
 It can be reduced to hamiltonian cycle.
 ## Applications
 **Bottleneck traveling salesman problem** has a lot of applications, motivated by some concrete problems, like school bus route.<br /> 
-A classic application is in logistics(deliveries, post office etc..).
+A classic application is in logistics(deliveries, post office etc..).<br /> 
 It's also used in biology(genome sequencing for example).
