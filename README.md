@@ -2,8 +2,10 @@
 Research on NP problem, and algorithms implementation
 # Topic: *Travelling salesman problem*
 **Travelling salesman problem** is an optimization problem that consists in determining, given a list of cities and the distances between all pairs of cities, the shortest circuit that passes through each city once and only once.
+Another formulation of the problem is as follows:<br/>
+*Given a list of cities and the distances between each pair of cities, what is the shortest possible route that visits each city exactly once and returns to the origin city?*
 ## Complexity
-The problem is NP-complete.
+The problem is NP-hard.
 It can be reduced to hamiltonian cycle.
 ## Example
 ### Consider cities A, B, C, D and distances between them.<br/>
