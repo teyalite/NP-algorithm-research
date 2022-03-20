@@ -7,6 +7,7 @@ The problem is NP-complete.
 It can be reduced to hamiltonian cycle.
 ## Example
   ![alt text](https://upload.wikimedia.org/wikipedia/commons/1/19/Tsp_instance.png?uselang=fr)
+  ![alt text](https://fr.wikipedia.org/wiki/Probl%C3%A8me_du_voyageur_de_commerce#/media/Fichier:Tsp_solution_debile.png)
 ## Applications
 **Bottleneck traveling salesman problem** has a lot of applications, motivated by some concrete problems, like school bus route.<br /> 
 A classic application is in logistics(deliveries, post office etc..).<br /> 
