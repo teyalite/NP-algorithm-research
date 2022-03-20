@@ -6,7 +6,7 @@ Research on NP problem, and algorithms implementation
 The problem is NP-complete.
 It can be reduced to hamiltonian cycle.
 ## Example
-  ![alt text](https://commons.wikimedia.org/wiki/File:Tsp_instance.png?uselang=fr)
+  ![alt text](https://upload.wikimedia.org/wikipedia/commons/1/19/Tsp_instance.png?uselang=fr)
 ## Applications
 **Bottleneck traveling salesman problem** has a lot of applications, motivated by some concrete problems, like school bus route.<br /> 
 A classic application is in logistics(deliveries, post office etc..).<br /> 
