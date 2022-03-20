@@ -6,7 +6,7 @@ Research on NP problem, and algorithms implementation
 The problem is NP-complete.
 It can be reduced to hamiltonian cycle.
 ## Example
- Consider cities A, B, C, D and distances between them.<br/>
+### Consider cities A, B, C, D and distances between them.<br/>
 <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Tsp_instance.png?uselang=fr" alt="drawing" width="200"/><br/>
 ### Here with have a path that goes through all cities exactly once.
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Tsp_solution_debile.png/185px-Tsp_solution_debile.png" alt="drawing" width="200"/><br/>
