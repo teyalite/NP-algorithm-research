@@ -1,7 +1,7 @@
 # NP-algorithm-research
 Research on NP problem, and algorithms implementation
 # Topic: *Travelling salesman problem*
-**Travelling salesman problem** is an optimization problem that consists in determining, given a list of cities and the distances between each pair of cities, what is the shortest possible route that visits each city exactly once and returns to the origin city?
+**Travelling salesman problem** is an optimization problem that consists in determining, given a list of cities and the distances between each pair of cities, what is the shortest possible route that visits each city exactly once and returns to the origin city.
 ## Complexity
 The problem is NP-hard.
 ## Example
