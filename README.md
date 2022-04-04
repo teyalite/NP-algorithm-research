@@ -25,3 +25,4 @@ If a computing a path takes 10<sup>-6</sup> second, for 25 cities the running ti
 **Travelling salesman problem** has a lot of applications, motivated by some concrete problems, like school bus route.<br/> 
 A classic application is in logistics(deliveries, post office etc..).<br/> 
 It's also used in biology(genome sequencing for example).<br/>
+# [Solutions implementations on Colab google](https://colab.research.google.com/drive/1Hh2Ug0jHpwvuJbXVs4iDskGIWhfzmVjH#scrollTo=XM2HSF7jhYeE)
