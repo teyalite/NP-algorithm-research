@@ -1,5 +1,3 @@
-from itertools import permutations
-import time
 import matplotlib.pyplot as plt
 from solutions import BruteForce, DynamicProgramming, Approximation
 from test import favorite_test_case

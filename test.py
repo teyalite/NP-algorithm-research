@@ -6,8 +6,8 @@ favorite_test_case = (4, [(0, 1, 4), (1, 2, 2), (2, 3, 5), (1, 3, 1), (3, 0, 3),
 
 
 # generate a graph randomly
-def generate_test_case():
-    number_of_nodes = randrange(3, 10)
+def generate_test_case(number_of_nodes=randrange(3, 10)):
+    print(number_of_nodes, "number_of_nodes")
     test_case = []
 
     for source in range(number_of_nodes):
