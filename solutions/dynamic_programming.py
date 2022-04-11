@@ -7,8 +7,9 @@ class DynamicProgramming(TravellingSalesman):
     def __init__(self, input_graph, undirected=True):
         super().__init__(input_graph, undirected)
 
-    # brute force
-    # running time is O((n - 1)!)
+    # dynamic programming solution
+    # algorithm used here is the Held–Karp algorithm
+    # running time is O((n^2)(2^n))
     # solution return a pair (shortest, shortestHow)
     def solution(self):
         # giving -1 as default value

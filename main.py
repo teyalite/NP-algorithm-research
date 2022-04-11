@@ -2,8 +2,10 @@ from itertools import permutations
 import time
 import matplotlib.pyplot as plt
 from solutions import BruteForce, DynamicProgramming, Approximation
+from test import favorite_test_case
 
-brute_force = BruteForce([(0, 1, 4), (1, 2, 2), (2, 3, 5), (1, 3, 1), (3, 0, 3), (2, 0, 1)])
-print(brute_force.solution())
-brute_force.draw()
+brute_force = BruteForce(favorite_test_case)
+cost, path = brute_force.solution()
+print(cost, path)
+brute_force.draw(path)
 plt.show()

@@ -4,8 +4,8 @@ from .travelling_salesman import TravellingSalesman
 
 # Travelling salesman brute force solution class
 class BruteForce(TravellingSalesman):
-    def __init__(self, input_graph, undirected=True):
-        super().__init__(input_graph, undirected)
+    def __init__(self, input_graph):
+        super().__init__(input_graph)
 
     # brute force
     # running time is O(n!)
