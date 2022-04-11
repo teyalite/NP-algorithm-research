@@ -1,39 +1,63 @@
-from itertools import permutations
+from itertools import permutations, combinations
 from .travelling_salesman import TravellingSalesman
 
 
 # Travelling salesman brute force solution class
 class DynamicProgramming(TravellingSalesman):
-    def __init__(self, input_graph, undirected=True):
-        super().__init__(input_graph, undirected)
+    def __init__(self, number_of_nodes, input_graph):
+        super().__init__(number_of_nodes, input_graph)
 
     # dynamic programming solution
     # algorithm used here is the Held–Karp algorithm
     # running time is O((n^2)(2^n))
     # solution return a pair (shortest, shortestHow)
     def solution(self):
-        # giving -1 as default value
-        # shortest path value
-        shortest = -1
-        # shortest path
-        shortest_how = ()
+        # Maps each subset of the nodes to the cost to reach that subset, as well
+        # as what node it passed before reaching this subset.
+        # Node subsets are represented as set bits.
+        subset_map = {}
 
-        # Explore all possible path
-        for way in permutations([*self.graph]):
-            current_how = 0
+        # Set transition cost from initial state
+        for k in range(1, self.number_of_nodes):
+            subset_map[(1 << k, k)] = (self.adjacency_matrix[0][k], 0)
 
-            for index in range(len(way)):
-                destination = way[(index + 1) % len(way)]
-                if not (destination in (self.graph[way[index]])):
-                    current_how = -1
-                    break
-                else:
-                    if current_how >= 0:
-                        current_how += self.graph[way[index]][destination]
-            # change the shortest only if the path contains all nodes
-            if current_how >= 0:
-                shortest = current_how if (shortest < 0) else min(shortest, current_how)
-                if shortest == current_how:
-                    shortest_how = way
+        # Iterate subsets of increasing length and store intermediate results
+        # in classic dynamic programming manner
+        for subset_size in range(2, self.number_of_nodes):
+            for subset in combinations(range(1, self.number_of_nodes), subset_size):
+                # Set bits for all nodes in this subset
+                bits = 0
+                for bit in subset:
+                    bits |= 1 << bit
 
-        return shortest, shortest_how
+                # Find the lowest cost to get to this subset
+                for k in subset:
+                    prev = bits & ~(1 << k)
+
+                    res = []
+                    for m in subset:
+                        if m == 0 or m == k:
+                            continue
+                        res.append((subset_map[(prev, m)][0] + self.adjacency_matrix[m][k], m))
+                    subset_map[(bits, k)] = min(res)
+
+        # all bits but the least significant (the starting one)
+        bits = (2 ** self.number_of_nodes - 1) - 1
+        # optimal cost
+        res = []
+        for k in range(1, self.number_of_nodes):
+            res.append((subset_map[(bits, k)][0] + self.adjacency_matrix[k][0], k))
+        shortest, parent = min(res)
+
+        # Backtrack bits to find the full path
+        shortest_how = []
+        for i in range(self.number_of_nodes - 1):
+            shortest_how.append(parent)
+            tmp_bits = bits & ~(1 << parent)
+            _, parent = subset_map[(bits, parent)]
+            bits = tmp_bits
+
+        # Adding the starting node
+        shortest_how.append(0)
+
+        return shortest, tuple(sorted(shortest_how))

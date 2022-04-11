@@ -23,9 +23,9 @@ def adjacency_matrix(number_of_nodes, input_graph):
 
 
 # pair map key function.
-# it returns a key for a map as the max + min of the provided pair
+# it returns a key for a map as the max, min of the provided pair
 def map_key(source, destination):
-    return str(max(source, destination)) + "-" + str(min(source, destination))
+    return max(source, destination), min(source, destination)
 
 
 # Parent class with abstract methods, properties, and common class.

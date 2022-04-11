@@ -34,4 +34,4 @@ class BruteForce(TravellingSalesman):
                 if shortest == current_cost:
                     shortest_how = way
 
-        return shortest, shortest_how
+        return shortest, tuple(sorted(shortest_how))
