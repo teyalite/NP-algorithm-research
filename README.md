@@ -21,8 +21,12 @@ This solution's running time is O(n!), where <strong>n</strong> represents the n
 This solution becomes unfeasible for even 20 cities.<br/>
 If a computing a path takes 10<sup>-6</sup> second, for 25 cities the running time exceeds the age of universe(14 billion years).<br/>
 <strong>Held-Karp</strong> algorithm reduce the time complexity to O(n<sup>2</sup>2<sup>n</sup>) by using dynamic programming.<br/>
+
+#### Solution of the previous example drawing using networkx and the brute force implementation
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Tsp_opt.png/186px-Tsp_opt.png" alt="drawing" width="200"/><br/>
 ## Applications
 **Travelling salesman problem** has a lot of applications, motivated by some concrete problems, like school bus route.<br/> 
 A classic application is in logistics(deliveries, post office etc..).<br/> 
 It's also used in biology(genome sequencing for example).<br/>
-# [Solutions implementations on Colab google](https://colab.research.google.com/drive/1Hh2Ug0jHpwvuJbXVs4iDskGIWhfzmVjH#scrollTo=XM2HSF7jhYeE)
+
+[//]: # (# [Solutions implementations on Colab google]&#40;https://colab.research.google.com/drive/1Hh2Ug0jHpwvuJbXVs4iDskGIWhfzmVjH#scrollTo=XM2HSF7jhYeE&#41;)

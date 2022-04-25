@@ -60,4 +60,4 @@ class DynamicProgramming(TravellingSalesman):
         # Adding the starting node
         shortest_how.append(0)
 
-        return shortest, tuple(sorted(shortest_how))
+        return shortest, tuple(shortest_how)

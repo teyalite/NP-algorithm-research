@@ -22,6 +22,27 @@ def adjacency_matrix(number_of_nodes, input_graph):
     return matrix
 
 
+# path map to make a fast existence check for an edge
+def get_path_map(path):
+    path_map = {}
+    for index in range(len(path)):
+        path_map[map_key(path[index], path[(index + 1) % len(path)])] = True
+
+    return path_map
+
+
+# compare two given solutions
+def are_equal(first, second):
+    if first[0] != second[0]:
+        return False
+    first_map = get_path_map(first[1])
+    second_map = get_path_map(second[1])
+    for key in first_map:
+        if key not in second_map:
+            return False
+    return True
+
+
 # pair map key function.
 # it returns a key for a map as the max, min of the provided pair
 def map_key(source, destination):
@@ -48,10 +69,8 @@ class TravellingSalesman:
     # path argument is the shortest path.
     def draw(self, path=()):
         networkx_graph = nx.Graph()
-        # path map to make a fast existence check for an edge
-        path_map = {}
-        for index in range(len(path)):
-            path_map[map_key(path[index], path[(index + 1) % len(path)])] = True
+
+        path_map = get_path_map(path)
 
         for node in range(self.number_of_nodes):
             networkx_graph.add_node(node)
@@ -59,7 +78,7 @@ class TravellingSalesman:
             for destination in range(self.number_of_nodes):
                 if self.adjacency_matrix[node][destination] == -1:
                     continue
-                color = "green" if map_key(node, destination) in path_map else "black"
+                color = "green" if map_key(node, destination) in path_map else "gray"
                 networkx_graph.add_edge(node, destination, color=color, weight=self.adjacency_matrix[node][destination])
 
         positions = nx.spring_layout(networkx_graph)

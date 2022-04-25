@@ -1,13 +1,12 @@
 from random import randrange
 from termcolor import cprint
-from solutions import BruteForce, DynamicProgramming, Approximation
+from solutions import BruteForce, DynamicProgramming, Approximation, are_equal
 
 favorite_test_case = (4, [(0, 1, 4), (1, 2, 2), (2, 3, 5), (1, 3, 1), (3, 0, 3), (2, 0, 1)])
 
 
 # generate a graph randomly
 def generate_test_case(number_of_nodes=randrange(3, 10)):
-    print(number_of_nodes, "number_of_nodes")
     test_case = []
 
     for source in range(number_of_nodes):
@@ -26,12 +25,12 @@ def generate_test_cases():
 
 
 def run_single_test(test_case):
-    brute_force = BruteForce(test_case[0], test_case[1])
-    dynamic_programming = DynamicProgramming(test_case[0], test_case[1])
+    brute_force = BruteForce(test_case[0], test_case[1].copy())
+    dynamic_programming = DynamicProgramming(test_case[0], test_case[1].copy())
     brute_force_solution = brute_force.solution()
     dynamic_programming_solution = dynamic_programming.solution()
 
-    if brute_force_solution != dynamic_programming_solution:
+    if not are_equal(brute_force_solution, dynamic_programming_solution):
         cprint("------ TEST FAILED -----", "red")
         cprint("Got: {}".format(dynamic_programming_solution), "red")
         cprint("Expected: {}".format(brute_force_solution), "cyan")
