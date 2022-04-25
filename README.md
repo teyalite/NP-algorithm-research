@@ -20,10 +20,18 @@ Generating all possible routes and take the cheapest using brute-force search.<b
 This solution's running time is O(n!), where <strong>n</strong> represents the number of cities.<br/>
 This solution becomes unfeasible for even 20 cities.<br/>
 If a computing a path takes 10<sup>-6</sup> second, for 25 cities the running time exceeds the age of universe(14 billion years).<br/>
-<strong>Held-Karp</strong> algorithm reduce the time complexity to O(n<sup>2</sup>2<sup>n</sup>) by using dynamic programming.<br/>
+
+#### Execution time graph for brute force solution
+<img src="https://raw.githubusercontent.com/teyalite/NP-algorithm-research/main/images/brute-force-graph.png" alt="drawing"/><br/>
+
+### Dynamic programming solution
+The algorithm used here is <strong>Held-Karp algorithm</strong>.<br/>
+Dynamic programming reduces the time complexity from super exponential time to exponential time O(n<sup>2</sup>2<sup>n</sup>).<br/>
+
+#### Execution time graph for dynamic programming solution
+<img src="https://raw.githubusercontent.com/teyalite/NP-algorithm-research/main/images/dynamic-programming.png" alt="drawing"/><br/>
 
 #### Solution of the previous example drawing using networkx and the brute force implementation
-
 <img src="https://raw.githubusercontent.com/teyalite/NP-algorithm-research/main/images/favorite-example.png" alt="drawing"/><br/>
 ## Applications
 **Travelling salesman problem** has a lot of applications, motivated by some concrete problems, like school bus route.<br/> 
