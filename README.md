@@ -23,7 +23,8 @@ If a computing a path takes 10<sup>-6</sup> second, for 25 cities the running ti
 <strong>Held-Karp</strong> algorithm reduce the time complexity to O(n<sup>2</sup>2<sup>n</sup>) by using dynamic programming.<br/>
 
 #### Solution of the previous example drawing using networkx and the brute force implementation
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Tsp_opt.png/186px-Tsp_opt.png" alt="drawing" width="200"/><br/>
+
+<img src="https://raw.githubusercontent.com/teyalite/NP-algorithm-research/main/images/favorite-example.png" alt="drawing"/><br/>
 ## Applications
 **Travelling salesman problem** has a lot of applications, motivated by some concrete problems, like school bus route.<br/> 
 A classic application is in logistics(deliveries, post office etc..).<br/> 
