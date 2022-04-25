@@ -2,10 +2,16 @@ from itertools import permutations
 from .travelling_salesman import TravellingSalesman
 
 
+# Find the minimum spanning tree using Prim's algorithm
+def minimum_spanning_tree(adjacency_matrix):
+    selected = [False] * len(adjacency_matrix)
+    pass
+
+
 # Travelling salesman brute force solution class
 class Approximation(TravellingSalesman):
-    def __init__(self, input_graph, undirected=True):
-        super().__init__(input_graph, undirected)
+    def __init__(self, number_of_nodes, input_graph):
+        super().__init__(number_of_nodes, input_graph)
 
     # brute force
     # running time is O((n - 1)!)
@@ -18,12 +24,12 @@ class Approximation(TravellingSalesman):
         shortest_how = ()
 
         # Explore all possible path
-        for way in permutations([*self.graph]):
+        for way in permutations([*self.input_graph]):
             current_how = 0
 
             for index in range(len(way)):
                 destination = way[(index + 1) % len(way)]
-                if not (destination in (self.graph[way[index]])):
+                if not (destination in (self.input_graph[way[index]])):
                     current_how = -1
                     break
                 else:

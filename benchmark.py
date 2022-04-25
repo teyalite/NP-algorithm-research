@@ -15,8 +15,8 @@ def solutions_execution_time():
     time_data = {}
     for node in range(2, 11):
         test_case = generate_test_case(node)
-        brute_force = BruteForce(test_case[0], test_case[1])
         dynamic_programming = DynamicProgramming(test_case[0], test_case[1])
+        brute_force = BruteForce(test_case[0], test_case[1])
         time_data[node] = (measure_time(brute_force.solution), measure_time(dynamic_programming.solution), 0)
 
     return time_data
