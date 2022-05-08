@@ -27,17 +27,31 @@ def generate_test_cases():
 def run_single_test(test_case):
     brute_force = BruteForce(test_case[0], test_case[1].copy())
     dynamic_programming = DynamicProgramming(test_case[0], test_case[1].copy())
+    approximation = Approximation(test_case[0], test_case[1].copy())
+
     brute_force_solution = brute_force.solution()
     dynamic_programming_solution = dynamic_programming.solution()
+    approximation_solution = approximation.solution()
+
+    return_value = False
 
     if not are_equal(brute_force_solution, dynamic_programming_solution):
-        cprint("------ TEST FAILED -----", "red")
+        cprint("------ TEST FAILED: DYNAMIC PROGRAMMING -----", "red")
         cprint("Got: {}".format(dynamic_programming_solution), "red")
         cprint("Expected: {}".format(brute_force_solution), "cyan")
-        return 1
+        return_value = True
     else:
-        cprint("------ TEST PASSED -----", "green")
-        return 0
+        cprint("------ TEST PASSED: DYNAMIC PROGRAMMING -----", "green")
+
+    if not are_equal(brute_force_solution, approximation_solution):
+        cprint("------ TEST FAILED: APPROXIMATION -----", "red")
+        cprint("Got: {}".format(approximation_solution), "red")
+        cprint("Expected: {}".format(brute_force_solution), "cyan")
+        return_value = True
+    else:
+        cprint("------ TEST PASSED: APPROXIMATION -----", "green")
+
+    return 1 if return_value else 0
 
 
 # run tests

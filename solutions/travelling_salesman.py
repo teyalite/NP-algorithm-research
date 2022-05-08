@@ -22,6 +22,26 @@ def adjacency_matrix(number_of_nodes, input_graph):
     return matrix
 
 
+# input_graph is an array of adjacent nodes and their distance
+# each element in the array is tuple (source, destination, distance)
+# it returns the adjacency list for the given graph
+def adjacency_list(input_graph):
+    adj_list = {}
+
+    for element in input_graph:
+        if element[0] not in adj_list:
+            adj_list[element[0]] = [(element[1], element[2])]
+        else:
+            adj_list[element[0]].append((element[1], element[2]))
+        # The graph is undirected therefore save the reverse relation
+        if element[1] not in adj_list:
+            adj_list[element[1]] = [(element[0], element[2])]
+        else:
+            adj_list[element[1]].append((element[0], element[2]))
+
+    return adj_list
+
+
 # path map to make a fast existence check for an edge
 def get_path_map(path):
     path_map = {}
@@ -58,6 +78,7 @@ class TravellingSalesman:
         self.number_of_nodes = number_of_nodes
         self.input_graph = input_graph
         self.adjacency_matrix = adjacency_matrix(number_of_nodes, input_graph)
+        self.adjacency_list = adjacency_list(input_graph)
 
     # abstract method to be implemented by all children.
     @abstractmethod
@@ -87,3 +108,5 @@ class TravellingSalesman:
         nx.draw(networkx_graph, positions, with_labels=True, edge_color=colors)
         nx.draw_networkx_edge_labels(networkx_graph, positions, edge_labels=labels, font_weight='bold', label_pos=0.6,
                                      font_color="red")
+
+        plt.show()

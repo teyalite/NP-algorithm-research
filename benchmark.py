@@ -17,9 +17,16 @@ def solutions_execution_time():
         test_case = generate_test_case(node)
         dynamic_programming = DynamicProgramming(test_case[0], test_case[1])
         brute_force = BruteForce(test_case[0], test_case[1])
-        time_data[node] = (measure_time(brute_force.solution), measure_time(dynamic_programming.solution), 0)
+        approximation = Approximation(test_case[0], test_case[1])
+        time_data[node] = (measure_time(brute_force.solution), measure_time(dynamic_programming.solution),
+                           measure_time(approximation.solution))
 
     return time_data
+
+
+# plot comparison graph
+def plot_graphs(data):
+    pass
 
 
 # if it's main module then run tests
