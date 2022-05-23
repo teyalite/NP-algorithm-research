@@ -1,8 +1,10 @@
+import unittest
 from random import randrange
 from termcolor import cprint
 from solutions import BruteForce, DynamicProgramming, Approximation, are_equal
 
 favorite_test_case = (4, [(0, 1, 4), (1, 2, 2), (2, 3, 5), (1, 3, 1), (3, 0, 3), (2, 0, 1)])
+favorite_test_case_expect = (7, (3, 1, 2, 0))
 
 
 # generate a graph randomly
